@@ -1,0 +1,79 @@
+# Facebook Messenger Bot - Git Ignore
+
+# Configuration files (contains sensitive data)
+config.php
+.env
+.env.local
+
+# Log files
+logs/
+*.log
+
+# Database files
+*.sql.backup
+*.sql.bak
+database-backup.sql
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.phpstorm.meta.php
+*.iml
+
+# PHP files
+vendor/
+composer.lock
+
+# Node/Build files
+node_modules/
+npm-debug.log
+dist/
+build/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Backup and testing files
+*.backup
+*.old
+*.dev
+test/
+tests/
+fixtures/
+
+# Cache
+.cache/
+*.cache
+
+# Session files
+session/
+tmp/
+
+# Email templates
+email-templates/local/
+
+# API keys and secrets
+*.key
+*.pem
+*.crt
+secrets/
+
+# Production files (keep local)
+production-backup/
+live-data/

@@ -1,0 +1,81 @@
+# Facebook Messenger Bot - Security Configuration
+# Place this file in the root directory of your app
+
+# Enable HTTPS redirect
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Force HTTPS (uncomment if needed)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "\.(env|sql|ini|log|conf)$">
+    Deny from all
+</FilesMatch>
+
+# Block access to config.php directly (optional)
+# <Files "config.php">
+#     Deny from all
+# </Files>
+
+# Add security headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Enable XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Cache control for API responses
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+</IfModule>
+
+# PHP settings (if needed)
+<IfModule mod_php.c>
+    php_flag register_globals off
+    php_flag short_open_tag off
+    php_flag magic_quotes_gpc off
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+</IfModule>
+
+# Deny access to common unwanted files
+<FilesMatch "(wp-config\.php|readme\.html|license\.txt|\.htaccess|\.git)">
+    Deny from all
+</FilesMatch>
+
+# Block access to backup files
+<FilesMatch "\.(bak|backup|swp|swo|tmp|~)$">
+    Deny from all
+</FilesMatch>
+
+# Compress CSS and JavaScript
+<IfModule mod_deflate.c>
+    AddType text/html .html
+    AddEncoding gzip .html
+    AddType text/plain .log
+    AddEncoding gzip .log
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+</IfModule>

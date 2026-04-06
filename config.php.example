@@ -1,0 +1,90 @@
+<?php
+/**
+ * Facebook Messenger Bot - Configuration Template
+ * 
+ * INSTRUCTIONS:
+ * 1. Copy this file to config.php
+ * 2. Fill in your actual credentials (see below)
+ * 3. NEVER commit config.php to GitHub (it's in .gitignore)
+ * 4. Keep this config.php.example updated for other developers
+ */
+
+// ============ DATABASE CONFIGURATION ============
+// Update with your database details
+
+define('DB_HOST', 'localhost');           // Usually 'localhost' on shared hosting
+define('DB_USER', 'your_database_user');  // Your MySQL username
+define('DB_PASS', 'your_password_here');  // Your MySQL password
+define('DB_NAME', 'fb_messenger_bot');    // Database name
+
+
+// ============ FACEBOOK CONFIGURATION ============
+// Get these from https://developers.facebook.com
+
+define('FB_PAGE_ID', 'YOUR_PAGE_ID_HERE');
+// Find at: Facebook App → Messenger → Settings → Get your page ID
+
+define('FB_PAGE_ACCESS_TOKEN', 'YOUR_LONG_TOKEN_HERE');
+// Generate at: Facebook App → Messenger → Settings → Generate Token
+// Format: EAA...long string...
+
+define('FB_VERIFY_TOKEN', 'your_secret_verify_token_here');
+// Create any random string for webhook verification
+// Example: 'my_secure_token_123'
+
+
+// ============ APPLICATION CONFIGURATION ============
+
+define('APP_URL', 'https://yourdomain.com');
+// Your actual domain: https://example.com or https://example.com/fb-bot
+
+define('TIMEZONE', 'Asia/Kolkata');
+// Set to your timezone: https://www.php.net/manual/en/timezones.php
+
+define('DEBUG_MODE', false);
+// Set to true only during development
+// Set to false in production for security
+
+
+// ============ ADMIN CONFIGURATION ============
+
+define('SESSION_TIMEOUT', 3600);
+// Session timeout in seconds (1 hour = 3600)
+
+define('MAX_LOGIN_ATTEMPTS', 5);
+// Maximum failed login attempts before lockout
+
+define('LOCKOUT_DURATION', 900);
+// Lockout duration in seconds (15 mins = 900)
+
+
+// ============ SECURITY ============
+
+define('CSRF_TOKEN_LENGTH', 32);
+// Length of CSRF tokens
+
+define('CSRF_TOKEN_EXPIRY', 3600);
+// CSRF token lifetime in seconds
+
+define('ENABLE_LOG_QUERIES', false);
+// Log all database queries (only for debugging)
+
+
+// ============ EMAIL CONFIGURATION (Optional) ============
+// Only needed if you want email notifications
+
+define('EMAIL_ENABLED', false);
+define('MAIL_HOST', 'smtp.gmail.com');
+define('MAIL_PORT', 587);
+define('MAIL_USERNAME', 'your-email@gmail.com');
+define('MAIL_PASSWORD', 'your-app-password');
+define('MAIL_FROM', 'noreply@yourdomain.com');
+
+
+// ============ SETUP COMPLETE? ============
+// After filling in all values above:
+// 1. Rename this file: cp config.php.example > config.php
+// 2. Never commit config.php to public repositories
+// 3. Test: Visit https://yourdomain.com/admin/
+// 4. Default login: admin / admin123 (change immediately!)
+?>
