@@ -431,9 +431,9 @@ DELETE FROM messages_log WHERE created_at < DATE_SUB(NOW(), INTERVAL 90 DAY);
 
 ### Mohammad Sheikh Shahinur Rahman
 - **Website:** https://shahinurrahman.com/
-- **Email:** contact@shahinurrahman.com
-- **GitHub:** [@shahinurrahman](https://github.com/shahinurrahman)
-- **LinkedIn:** [Mohammad Sheikh Shahinur Rahman](https://linkedin.com/in/shahinurrahman)
+- **Email:** info@shahinurrahman.com
+- **GitHub:** [@mohammad-sheikh-shahinur-rahman](https://github.com/mohammad-sheikh-shahinur-rahman)
+- **LinkedIn:** [Mohammad Sheikh Shahinur Rahman](https://linkedin.com/in/mohammad-sheikh-shahinur-rahman)
 
 **About:** Full-stack PHP & JavaScript developer with expertise in Facebook Messenger bots, order management systems, and custom web solutions.
 
